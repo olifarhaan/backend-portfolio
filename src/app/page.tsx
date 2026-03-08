@@ -369,6 +369,7 @@ export default function Home() {
         <div className="hidden lg:block absolute bottom-0 left-0 right-0">
           <CrossLine />
         </div>
+        <div className="lg:hidden h-px bg-neutral-200 dark:bg-neutral-800" />
       </main>
 
       <footer className="max-w-4xl mx-auto text-center py-8">

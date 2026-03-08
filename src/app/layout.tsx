@@ -76,6 +76,26 @@ export default function RootLayout({
       </head>
       <body className="antialiased transition-colors duration-300">
         {children}
+        {process.env.RINGG_AGENT_API_KEY && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                function loadAgentsCdn(e,t){let n=document.createElement("link");n.rel="stylesheet",n.type="text/css",n.href="https://cdn.jsdelivr.net/npm/@desivocal/agents-cdn@"+e+"/dist/style.css";var a=document.createElement("script");a.type="text/javascript",a.readyState?a.onreadystatechange=function(){"loaded"!==a.readyState&&"complete"!==a.readyState||(a.onreadystatechange=null,t())}:a.onload=function(){t()},a.src="https://cdn.jsdelivr.net/npm/@desivocal/agents-cdn@"+e+"/dist/dv-agent.es.js",document.getElementsByTagName("head")[0].appendChild(n),document.getElementsByTagName("head")[0].appendChild(a)}
+                loadAgentsCdn("1.0.20-alpha.59", function () {
+                  loadAgent({
+                    agentId: "41d33635-737f-427d-994a-6f904dd4c483",
+                    xApiKey: "${process.env.RINGG_AGENT_API_KEY}",
+                    variables: {},
+                    theme: {"primaryColor":"#18181b","primaryTextColor":"#ffffff","backgroundColor":"#ffffff","surfaceColor":"#f4f4f5","textColor":"#18181b","borderColor":"#e4e4e7","buttonStyle":"rounded","borderRadius":"20px"},
+                    title: "Ali's Assistant",
+                    description: "Talk to Ali's AI assistant — ask about his work, skills, or anything on this portfolio.",
+                    icon: "${process.env.SITE_URL || ''}${data.personal.logoPath}",
+                  });
+                });
+              `,
+            }}
+          />
+        )}
       </body>
     </html>
   );
