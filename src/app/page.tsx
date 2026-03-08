@@ -29,11 +29,13 @@ export default function Home() {
 
         <div className="px-5 md:px-10 pt-20 md:pt-24 pb-16 md:pb-20 space-y-16 md:space-y-24">
           {/* ── Hero ── */}
-          <section id="about" className="pt-8 md:pt-24 pb-8">
+          <section id="about" className="pt-8 md:pt-24 pb-8 relative overflow-hidden">
+            <div className="grid-bg" />
+            <div className="relative z-10">
             <p className="text-xs text-neutral-400 dark:text-neutral-500 uppercase tracking-[0.3em] mb-8">
               {personal.title}
             </p>
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-black dark:text-white leading-[1.05] tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight shimmer-text">
               {personal.name.first}
               <br />
               {personal.name.last}
@@ -93,6 +95,7 @@ export default function Home() {
                   </div>
                 ))}
               </Terminal>
+            </div>
             </div>
           </section>
 

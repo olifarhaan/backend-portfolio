@@ -134,8 +134,19 @@ export default function RootLayout({
                     theme: {"primaryColor":"#18181b","primaryTextColor":"#ffffff","backgroundColor":"#ffffff","surfaceColor":"#f4f4f5","textColor":"#18181b","borderColor":"#e4e4e7","buttonStyle":"rounded","borderRadius":"20px"},
                     title: "Ali's Assistant",
                     description: "Talk to Ali's AI assistant — ask about his work, skills, or anything on this portfolio.",
-                    icon: "${process.env.SITE_URL || ''}${data.personal.logoPath}",
+                    logoUrl: "${process.env.SITE_URL || ''}${data.personal.logoPath}",
+                    buttons: {
+                      modalTrigger: {
+                        styles: {
+                          boxShadow: "0 2px 8px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.04)"
+                        }
+                      }
+                    }
                   });
+                  setTimeout(function() {
+                    var btn = document.querySelector('[class*="ringg_ai-h-14"]');
+                    if (btn) btn.click();
+                  }, 1500);
                 });
               `,
             }}
