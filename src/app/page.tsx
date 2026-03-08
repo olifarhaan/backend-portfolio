@@ -372,9 +372,21 @@ export default function Home() {
         <div className="lg:hidden h-px bg-neutral-200 dark:bg-neutral-800" />
       </main>
 
-      <footer className="max-w-4xl mx-auto text-center py-8">
+      <footer className="max-w-4xl mx-auto text-center py-8 space-y-2">
         <p className="text-neutral-400 dark:text-neutral-600 text-[11px] tracking-widest uppercase">
-          {personal.footerName} &copy; {new Date().getFullYear()}
+          Made with love by {personal.footerName} &copy;{" "}
+          {new Date().getFullYear()}
+        </p>
+        <p className="text-neutral-400 dark:text-neutral-600 text-[11px] tracking-widest uppercase">
+          Want the same portfolio?{" "}
+          <a
+            href={personal.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-neutral-600 dark:hover:text-neutral-400 transition-colors"
+          >
+            Get it here
+          </a>
         </p>
       </footer>
     </div>
