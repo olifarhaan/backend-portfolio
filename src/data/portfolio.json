@@ -193,23 +193,24 @@
   "activities": [
     {
       "title": "Former Executive Member",
-      "description": "CSSE & IEEE-STB at MMMUT"
-    },
-    {
-      "title": "Freelancer",
-      "description": "Delivered low-code and digital solutions for businesses including Nirvana Beauty, Ravisha Continental, and Liba Fashions."
-    },
-    {
-      "title": "Extracurricular",
+      "description": "CSSE & IEEE-STB at MMMUT",
       "items": [
         "Led the organization of Code Bugger in association with Coding Ninjas.",
         "Active involvement in organizing society events like Technokratos and Techsrijan."
       ]
     },
     {
+      "title": "Freelancer",
+      "description": "Delivered low-code and digital solutions for businesses including Nirvana Beauty, Ravisha Continental, and Liba Fashions."
+    },
+    {
       "title": "Technical Writing",
       "description": "Backend engineering, distributed systems, and software architecture.",
       "url": "https://medium.com/@OliFarhaan"
+    },
+    {
+      "title": "Volunteer — Covid Sahayata",
+      "description": "Designed bilingual (English & Hindi) informative graphics to combat COVID-19 misinformation in rural India during the pandemic."
     }
   ],
 

@@ -283,7 +283,7 @@ export default function Home() {
           <Section id="activities" title={sectionTitles.activities}>
             <div className="space-y-0 divide-y divide-neutral-200 dark:divide-neutral-800">
               {activities.map((activity, i) => (
-                <div key={i} className="py-6 first:pt-0 last:pb-0">
+                <div key={i} className="py-8 first:pt-0 last:pb-0">
                   {"url" in activity && activity.url ? (
                     <a
                       href={activity.url}
@@ -318,7 +318,7 @@ export default function Home() {
                     </>
                   )}
                   {"items" in activity && activity.items && (
-                    <ul className="space-y-2">
+                    <ul className="mt-3 space-y-2">
                       {activity.items.map((item, j) => (
                         <li
                           key={j}
