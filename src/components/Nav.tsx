@@ -47,6 +47,7 @@ export function Nav() {
             onClick={() => setOpen(!open)}
             className="text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white text-sm min-h-[44px] min-w-[44px] flex items-center justify-center"
             aria-label="Toggle menu"
+            aria-expanded={open}
           >
             {open ? "close" : "menu"}
           </button>

@@ -18,10 +18,15 @@ const firaCode = Fira_Code({
 
 const siteUrl = process.env.SITE_URL || "https://localhost:3000";
 
+const fullName = `${data.personal.name.first} ${data.personal.name.last}`;
+const pageTitle = `${fullName} | ${data.personal.title}`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: `${data.personal.name.first} ${data.personal.name.last} | ${data.personal.title}`,
+  title: pageTitle,
   description: data.personal.bio,
+  authors: [{ name: fullName }],
+  creator: fullName,
   keywords: [
     "backend engineer",
     "software engineer",
@@ -32,18 +37,34 @@ export const metadata: Metadata = {
     "Kubernetes",
     "distributed systems",
   ],
+  alternates: {
+    canonical: siteUrl,
+  },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/logo.png",
+  },
   openGraph: {
-    title: `${data.personal.name.first} ${data.personal.name.last} | ${data.personal.title}`,
+    title: pageTitle,
     description: data.personal.bio,
     url: siteUrl,
-    siteName: `${data.personal.name.first} ${data.personal.name.last}`,
+    siteName: fullName,
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${fullName} — ${data.personal.title}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${data.personal.name.first} ${data.personal.name.last} | ${data.personal.title}`,
+    title: pageTitle,
     description: data.personal.bio,
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -73,6 +94,26 @@ export default function RootLayout({
                 }
               })();
             `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: fullName,
+              url: siteUrl,
+              image: `${siteUrl}/logo.png`,
+              jobTitle: data.personal.title,
+              description: data.personal.bio,
+              email: `mailto:${data.personal.email}`,
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: data.personal.location,
+              },
+              sameAs: data.socials.map((s: { url: string }) => s.url),
+            }),
           }}
         />
       </head>
