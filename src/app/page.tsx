@@ -70,7 +70,7 @@ export default function Home() {
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8 text-xs">
               <a
-                href={`mailto:${personal.email}`}
+                href="#contact"
                 className="text-white dark:text-black bg-black dark:bg-white px-5 py-3 hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors uppercase tracking-widest text-center sm:w-auto"
               >
                 Contact
