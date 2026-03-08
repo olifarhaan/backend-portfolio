@@ -343,12 +343,24 @@ export default function Home() {
               <p className="text-neutral-500 dark:text-neutral-400 text-sm leading-[1.8] mb-8">
                 {contact.message}
               </p>
-              <a
-                href={`mailto:${personal.email}`}
-                className="inline-block text-white dark:text-black bg-black dark:bg-white px-5 sm:px-6 py-3 text-[10px] sm:text-xs uppercase tracking-widest hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors break-all sm:break-normal"
-              >
-                {personal.email}
-              </a>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href={`mailto:${personal.email}`}
+                  className="text-black dark:text-white text-xs uppercase tracking-widest hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors underline underline-offset-4"
+                >
+                  {personal.email}
+                </a>
+                {contact.calendlyUrl && (
+                  <a
+                    href={contact.calendlyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-black dark:text-white text-xs uppercase tracking-widest hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors underline underline-offset-4"
+                  >
+                    Schedule a call ↗
+                  </a>
+                )}
+              </div>
               <div className="flex flex-wrap gap-x-5 gap-y-3 md:gap-6 mt-10 pt-6 border-t border-neutral-200 dark:border-neutral-800">
                 {socials.map((s) => (
                   <a
