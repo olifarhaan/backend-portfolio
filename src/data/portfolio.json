@@ -1,0 +1,217 @@
+{
+  "sectionTitles": {
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "achievements": "Honours & Achievements",
+    "activities": "Activities & Responsibilities",
+    "contact": "Contact"
+  },
+
+  "navLinks": [
+    { "href": "#skills", "label": "Skills" },
+    { "href": "#experience", "label": "Experience" },
+    { "href": "#projects", "label": "Projects" },
+    { "href": "#contact", "label": "Contact" }
+  ],
+
+  "personal": {
+    "name": {
+      "first": "Ali",
+      "last": "Farhan"
+    },
+    "title": "Founding Software Engineer",
+    "bio": "2x founding engineer at early-stage startups. I build the backend infrastructure that products ship on — from zero to production. Java, Go, Spring, Kubernetes, and whatever the system needs.",
+    "currentWork": {
+      "text": "Currently building AI-powered voice agent at",
+      "company": "Ringg.ai",
+      "url": "https://ringg.ai"
+    },
+    "email": "olifarhaan@protonmail.com",
+    "location": "Bangalore, India",
+    "resumePath": "/resume.pdf",
+    "navName": "Ali Farhan",
+    "footerName": "Ali Farhan"
+  },
+
+  "socials": [
+    { "label": "GitHub", "url": "https://github.com/OliFarhaan" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/OliFarhaan" },
+    { "label": "YouTube", "url": "https://www.youtube.com/@OliFarhaan" },
+    { "label": "Medium", "url": "https://medium.com/@OliFarhaan" },
+    { "label": "LeetCode", "url": "https://leetcode.com/OliFarhaan" }
+  ],
+
+  "terminal": [
+    { "prompt": "echo $STATUS", "output": "Open to interesting projects" },
+    { "prompt": "echo $LOCATION", "output": "Bangalore, India" }
+  ],
+
+  "skills": {
+    "Backend": [
+      "Java", "Go", "Python", "Spring(Cloud, Data JPA, AI, Security, AOP, Cloud)",
+      "Chi", "FastAPI", "Node.js", "Express"
+    ],
+    "DevOps": [
+      "Kubernetes", "Docker", "GCP", "Azure", "GitHub Actions", "KEDA", "Render"
+    ],
+    "Observability": ["OTEL Collector", "Prometheus", "Grafana", "Jaeger"],
+    "Data & Messaging": ["NATS JetStream", "PostgreSQL", "MongoDB", "Redis"],
+    "Misc": [
+      "Asterisk VoIP", "SIP Trunking", "WordPress", "Shopify",
+      "JavaScript", "React", "Tailwind"
+    ]
+  },
+
+  "skillsFootnote": "& whatever the system demands next.",
+
+  "experience": [
+    {
+      "company": "Ringg.ai",
+      "role": "Software Engineer",
+      "period": "Jun 2025 — Present",
+      "location": "Bangalore, India",
+      "tag": "Founding",
+      "points": [
+        "Led KSA-compliant infrastructure deployment, migrating NATS JetStream, K8s workloads, and data pipelines for regional data residency.",
+        "Built a Pre-Call API framework enabling agents to prefetch and decrypt customer data via phone numbers, now powering most enterprise workflows.",
+        "Led technical client integrations, directly working with enterprise clients to design and implement telephony, SIP, and CRM integrations.",
+        "Architected an Asterisk-based SIP telephony stack, removing dependency on third-party providers and enabling global outbound calling through client-hosted PBX systems.",
+        "Implemented event-driven Kubernetes autoscaling using KEDA and introduced OpenTelemetry-based standardized monitoring for vendor-agnostic observability.",
+        "Resolved 18 backend and infrastructure vulnerabilities discovered during third-party VAPT audits, strengthening enterprise security compliance."
+      ]
+    },
+    {
+      "company": "GyanGrove",
+      "role": "Software Engineer",
+      "period": "May 2024 — May 2025",
+      "location": "Bangalore, India",
+      "tag": "Founding",
+      "points": [
+        "Led architecture and development of an enterprise-grade social-tech platform, building group membership with granular access control, timeslot scheduling with cross-model aggregation, real-time notifications, and AOP-based monitoring.",
+        "Engineered a direct parent-to-school payment system enabling secure zero-intermediary transactions.",
+        "Implemented multi-environment CI/CD pipelines using GitHub Actions for automated Azure deployments and built an Azure Function for PDF-to-PNG conversion.",
+        "Built RAG pipelines using Python and OpenAI GPT with Azure OpenAI integration, wrote integration tests across 200+ REST APIs, and developed a demo data generation tool reducing setup time from hours to minutes."
+      ]
+    },
+    {
+      "company": "LearnSmasher EduTech",
+      "role": "Java Programmer",
+      "period": "Jun 2023",
+      "location": "Remote",
+      "tag": "Internship",
+      "points": [
+        "Built desktop applications using Java, Java Swing, AWT & JavaFX including an ATM Simulator and Task & Employee Management systems.",
+        "Programmed a high-performance Download Manager using JavaFX and Java multithreading."
+      ]
+    }
+  ],
+
+  "education": [
+    {
+      "degree": "Master in Computer Applications",
+      "institution": "MMMUT — Technical University of Engineering",
+      "location": "Gorakhpur, UP, India",
+      "period": "June 2024",
+      "grade": "Percentage: 77.9% (Honours)",
+      "coursework": [
+        "Software Engineering & Web Technology",
+        "Java, C++ & Python",
+        "Operating Systems & Computer Networks",
+        "DBMS, DSA & Distributed Systems",
+        "Artificial Intelligence"
+      ]
+    },
+    {
+      "degree": "Bachelor of Science",
+      "institution": "Ewing Christian College (Autonomous)",
+      "location": "Prayagraj, UP, India",
+      "period": "2017 — 2020",
+      "grade": "Percentage: 54.3%",
+      "coursework": [
+        "Advanced Analysis",
+        "Linear Algebra",
+        "Mechanics",
+        "Elementary Analysis"
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Lakeview",
+      "description": "Enterprise Hotel Reservation Engine",
+      "tech": ["Spring", "Redis", "Redisson", "Python", "MySQL", "Docker"],
+      "url": "https://github.com/olifarhaan/lakeview",
+      "points": [
+        "Built a high-concurrency booking engine using Redis distributed locking, eliminating double bookings while supporting 5K+ concurrent requests.",
+        "Engineered a real-time room availability system using composite B-tree indexes and implemented role-based access control, validated with Pytest load tests."
+      ]
+    },
+    {
+      "name": "Snap Civic",
+      "description": "Civic Engagement Platform",
+      "tech": ["Spring", "Hibernate Spatial", "Python", "MySQL", "Docker"],
+      "url": "https://github.com/olifarhaan/snap-civic",
+      "points": [
+        "Built a geospatial issue-tracking system using Hibernate Spatial and JTS for radius-based location queries.",
+        "Containerized the application using multi-stage Docker builds. Implemented method-level performance monitoring to track execution time and errors."
+      ]
+    },
+    {
+      "name": "Quick Quip",
+      "description": "Full-Stack Short URL & QR Code Generator",
+      "tech": ["React", "Node", "Express", "MongoDB", "Tailwind"],
+      "url": "https://github.com/olifarhaan/quick-quip",
+      "points": [
+        "Architected a scalable application with URL shortening, QR code generation, and a modern UI.",
+        "Implemented custom middlewares ensuring clean, modularized code and data integrity."
+      ]
+    },
+    {
+      "name": "Griha Milan",
+      "description": "Real-Estate Listing Platform",
+      "tech": ["React", "Firebase", "Tailwind"],
+      "url": "https://github.com/olifarhaan/griha-milan",
+      "points": [
+        "Engineered dynamic listing features for creating, updating, and managing property listings.",
+        "Integrated Firebase authentication for data security and user authentication integrity."
+      ]
+    }
+  ],
+
+  "achievements": [
+    "AIR 18 in CodeBugger Coding Competition.",
+    "Represented GyanGrove at IIM Bangalore for the Google for Startups Program.",
+    "Token of Love from CSSE for being an Executive Member.",
+    "Solved 420+ problems on LeetCode and CodeChef."
+  ],
+
+  "activities": [
+    {
+      "title": "Former Executive Member",
+      "description": "CSSE & IEEE-STB at MMMUT"
+    },
+    {
+      "title": "Freelancer",
+      "description": "Delivered low-code and digital solutions for businesses including Nirvana Beauty, Ravisha Continental, and Liba Fashions."
+    },
+    {
+      "title": "Extracurricular",
+      "items": [
+        "Led the organization of Code Bugger in association with Coding Ninjas.",
+        "Active involvement in organizing society events like Technokratos and Techsrijan."
+      ]
+    },
+    {
+      "title": "Technical Writing",
+      "description": "Backend engineering, distributed systems, and software architecture.",
+      "url": "https://medium.com/@OliFarhaan"
+    }
+  ],
+
+  "contact": {
+    "message": "I'm currently open to exploring new projects and freelancing opportunities. Feel free to reach out."
+  }
+}
