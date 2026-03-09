@@ -50,8 +50,17 @@
     { "label": "GitHub", "url": "https://github.com/OliFarhaan" },
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/OliFarhaan" },
     { "label": "YouTube", "url": "https://www.youtube.com/@OliFarhaan" },
+    { "label": "X", "url": "https://x.com/OliFarhaan" },
     { "label": "Medium", "url": "https://medium.com/@OliFarhaan" },
     { "label": "LeetCode", "url": "https://leetcode.com/OliFarhaan" }
+  ],
+
+  "secondarySocials": [
+    { "label": "Instagram", "url": "https://www.instagram.com/olifarhaan" },
+    { "label": "Threads", "url": "https://www.threads.net/@olifarhaan" },
+    { "label": "Dribbble", "url": "https://dribbble.com/olifarhaan" },
+    { "label": "Behance", "url": "https://www.behance.net/olifarhaan" },
+    { "label": "Pinterest", "url": "https://in.pinterest.com/olifarhaan" }
   ],
 
   "terminal": [

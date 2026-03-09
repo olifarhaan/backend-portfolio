@@ -192,7 +192,10 @@ export default function RootLayout({
               ),
               knowsAbout: Object.values(data.skills).flat(),
               skills: Object.values(data.skills).flat(),
-              sameAs: data.socials.map((s: { url: string }) => s.url),
+              sameAs: [
+                ...data.socials.map((s: { url: string }) => s.url),
+                ...data.secondarySocials.map((s: { url: string }) => s.url),
+              ],
             }),
           }}
         />
