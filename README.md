@@ -64,6 +64,86 @@ All content is in [`src/data/portfolio.json`](src/data/portfolio.json). Update t
 
 The resume PDF goes in `public/` — update the `resumePath` field in the JSON to match.
 
+### Adding a New Project
+
+Add an entry to the `projects` array in `portfolio.json`:
+
+```json
+{
+  "name": "My Project",
+  "description": "Short tagline for the project",
+  "tech": ["Spring", "Redis", "Docker"],
+  "url": "https://github.com/username/my-project",
+  "points": [
+    "Built feature X that does Y.",
+    "Implemented Z for better performance."
+  ]
+}
+```
+
+### Adding Work Experience
+
+Add an entry to the `experience` array:
+
+```json
+{
+  "company": "Acme Corp",
+  "role": "Software Engineer",
+  "period": "Jan 2025 — Present",
+  "location": "Remote",
+  "tag": "Founding",
+  "points": [
+    "Led the backend architecture for the core product.",
+    "Built CI/CD pipelines using GitHub Actions."
+  ]
+}
+```
+
+### Customizing the Footer
+
+The footer displays `personal.footerName` with the current year, and a "Get it here" link using `personal.repoUrl`. Update these fields in `portfolio.json`:
+
+```json
+{
+  "personal": {
+    "footerName": "Your Name",
+    "repoUrl": "https://github.com/username/repo"
+  }
+}
+```
+
+### Adding Social Links
+
+Add entries to the `socials` array. The label is used as display text:
+
+```json
+{ "label": "GitHub", "url": "https://github.com/username" }
+```
+
+### Updating Site Metadata
+
+The page title, description, and OG image are all derived from `portfolio.json`:
+
+- **Title** — `{personal.name.first} {personal.name.last} | {personal.title}`
+- **Description** — `personal.bio`
+- **OG image** — Auto-generated from name, title, bio, email, and location
+
+### Changing the Monospace Font
+
+The portfolio uses [Fira Code](https://github.com/tonsky/FiraCode) as the monospace font. To change it, update the font import in `src/app/layout.tsx`:
+
+```tsx
+import { Fira_Code } from "next/font/google";
+
+const firaCode = Fira_Code({
+  variable: "--font-fira-code",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+```
+
+Replace `Fira_Code` with any monospace font from [Google Fonts](https://fonts.google.com/?classification=Monospace) and update the variable name if needed. The CSS variable `--font-fira-code` is used throughout the styles.
+
 ### Environment Variables
 
 | Variable | Required | Description |
