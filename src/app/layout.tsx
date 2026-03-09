@@ -105,10 +105,20 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: fullName,
+              givenName: data.personal.name.first,
+              familyName: data.personal.name.last,
               alternateName: "OliFarhaan",
               url: siteUrl,
-              image: `${siteUrl}/logo.png`,
+              image: `${siteUrl}${data.personal.imagePath}`,
               jobTitle: data.personal.title,
+              hasOccupation: {
+                "@type": "Occupation",
+                name: data.personal.title,
+                occupationLocation: {
+                  "@type": "Country",
+                  name: data.personal.nationality,
+                },
+              },
               worksFor: {
                 "@type": "Organization",
                 name: data.personal.currentWork.company,
@@ -116,15 +126,72 @@ export default function RootLayout({
               },
               description: data.personal.bio,
               email: `mailto:${data.personal.email}`,
+              gender: data.personal.gender,
+              birthDate: data.personal.birthDate,
+              birthPlace: {
+                "@type": "Place",
+                name: data.personal.birthPlace,
+              },
+              nationality: {
+                "@type": "Country",
+                name: data.personal.nationality,
+              },
+              knowsLanguage: data.personal.languages,
+              height: {
+                "@type": "QuantitativeValue",
+                value: data.personal.height,
+                unitCode: "CMT",
+              },
+              weight: {
+                "@type": "QuantitativeValue",
+                value: data.personal.weight,
+                unitCode: "KGM",
+              },
+              parent: {
+                "@type": "Person",
+                name: data.personal.parent,
+              },
               address: {
                 "@type": "PostalAddress",
-                addressLocality: data.personal.location,
+                addressLocality: "Bangalore",
+                addressRegion: "Karnataka",
+                addressCountry: "IN",
               },
-              alumniOf: data.education.map((e: { institution: string }) => ({
-                "@type": "EducationalOrganization",
-                name: e.institution,
-              })),
+              workLocation: {
+                "@type": "Place",
+                name: data.personal.location,
+              },
+              alumniOf: data.education.map(
+                (e: {
+                  institution: string;
+                  degree: string;
+                  period: string;
+                  location: string;
+                }) => ({
+                  "@type": "OrganizationRole",
+                  alumniOf: {
+                    "@type": "EducationalOrganization",
+                    name: e.institution,
+                    address: e.location,
+                  },
+                  startDate: e.period.split(" — ")[0],
+                  endDate: e.period.split(" — ")[1] || e.period,
+                  roleName: e.degree,
+                })
+              ),
+              hasCredential: data.education.map(
+                (e: { degree: string; institution: string }) => ({
+                  "@type": "EducationalOccupationalCredential",
+                  name: e.degree,
+                  credentialCategory: "degree",
+                  recognizedBy: {
+                    "@type": "EducationalOrganization",
+                    name: e.institution,
+                  },
+                })
+              ),
               knowsAbout: Object.values(data.skills).flat(),
+              skills: Object.values(data.skills).flat(),
               sameAs: data.socials.map((s: { url: string }) => s.url),
             }),
           }}
