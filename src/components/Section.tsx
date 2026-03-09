@@ -1,6 +1,4 @@
-"use client";
-
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode } from "react";
 
 interface SectionProps {
   id: string;
@@ -9,29 +7,8 @@ interface SectionProps {
 }
 
 export function Section({ id, title, children }: SectionProps) {
-  const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.08 }
-    );
-
-    const el = ref.current;
-    if (el) observer.observe(el);
-    return () => {
-      if (el) observer.unobserve(el);
-    };
-  }, []);
-
   return (
-    <section id={id} ref={ref} className="fade-in scroll-mt-20">
+    <section id={id} className="scroll-mt-20">
       {/* Vercel-style cross line with + markers */}
       <div className="hidden lg:block relative -mx-5 md:-mx-10 mb-8">
         <div className="relative h-px bg-neutral-200 dark:bg-neutral-800">

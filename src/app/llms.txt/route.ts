@@ -1,5 +1,7 @@
 import data from "@/data/portfolio.json";
 
+export const dynamic = "force-static";
+
 export function GET() {
   const p = data.personal;
   const fullName = `${p.name.first} ${p.name.last}`;

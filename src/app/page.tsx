@@ -1,5 +1,3 @@
-"use client";
-
 import { Nav } from "@/components/Nav";
 import { Terminal, Prompt, Output } from "@/components/Terminal";
 import { Section } from "@/components/Section";
@@ -29,13 +27,13 @@ export default function Home() {
 
         <div className="px-5 md:px-10 pt-20 md:pt-24 pb-16 md:pb-20 space-y-16 md:space-y-24">
           {/* ── Hero ── */}
-          <section id="about" className="pt-8 md:pt-24 pb-8 relative overflow-hidden">
+          <section id="about" className="pt-2 sm:pt-8 md:pt-24 pb-8 relative overflow-hidden">
             <div className="grid-bg" />
             <div className="relative z-10">
             <p className="text-xs text-neutral-400 dark:text-neutral-500 uppercase tracking-[0.3em] mb-8">
               {personal.title}
             </p>
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight shimmer-text">
+            <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight shimmer-text">
               {personal.name.first}
               <br />
               {personal.name.last}

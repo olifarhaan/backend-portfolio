@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import data from "@/data/portfolio.json";
 
-export const runtime = "edge";
+export const dynamic = "force-static";
 export const alt = `${data.personal.name.first} ${data.personal.name.last} — ${data.personal.title}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
