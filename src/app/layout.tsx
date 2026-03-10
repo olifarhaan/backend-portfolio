@@ -209,7 +209,7 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{
               __html: `
                 function loadAgentsCdn(e,t){let n=document.createElement("link");n.rel="stylesheet",n.type="text/css",n.href="https://cdn.jsdelivr.net/npm/@desivocal/agents-cdn@"+e+"/dist/style.css";var a=document.createElement("script");a.type="text/javascript",a.readyState?a.onreadystatechange=function(){"loaded"!==a.readyState&&"complete"!==a.readyState||(a.onreadystatechange=null,t())}:a.onload=function(){t()},a.src="https://cdn.jsdelivr.net/npm/@desivocal/agents-cdn@"+e+"/dist/dv-agent.es.js",document.getElementsByTagName("head")[0].appendChild(n),document.getElementsByTagName("head")[0].appendChild(a)}
-                loadAgentsCdn("1.0.20-alpha.59", function () {
+                function initRingg() { loadAgentsCdn("1.0.20-alpha.59", function () {
                   loadAgent({
                     agentId: "41d33635-737f-427d-994a-6f904dd4c483",
                     xApiKey: "${process.env.RINGG_AGENT_API_KEY}",
@@ -230,7 +230,9 @@ export default function RootLayout({
                     var btn = document.querySelector('[class*="ringg_ai-h-14"]');
                     if (btn) btn.click();
                   }, 1500);
-                });
+                }); }
+                if (document.readyState === 'complete') { setTimeout(initRingg, 100); }
+                else { window.addEventListener('load', function() { setTimeout(initRingg, 100); }); }
               `,
             }}
           />
