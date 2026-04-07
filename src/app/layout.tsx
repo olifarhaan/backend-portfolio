@@ -103,6 +103,25 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: fullName,
+              alternateName: "OliFarhaan",
+              url: siteUrl,
+              description: data.personal.bio,
+              inLanguage: "en-US",
+              publisher: {
+                "@type": "Person",
+                name: fullName,
+                url: siteUrl,
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
               "@type": "Person",
               name: fullName,
               givenName: data.personal.name.first,
